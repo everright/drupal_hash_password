@@ -22,10 +22,14 @@ Import the SQL file with drush.
 Usage
 -----
 
-    $ drush sql-cli
-    // Drupal password hash
+Drupal password hash
+
     mysql> select drupal_hash_password('Your Password', 15);
-    // Update user's password with plain-text.
+
+Update user's password with plain-text.
+
     mysql> UPDATE users SET pass = drupal_hash_password('Your Password', 15) WHERE uid = 1;
-    // Update user's password with md5 hashed.
+
+Update user's password with md5 hashed.
+
     mysql> UPDATE users SET pass = CONCAT('U', drupal_hash_password('Your MD5 Hashed Password', 11)) WHERE uid = 1;
